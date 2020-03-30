@@ -1,5 +1,6 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, PaginateModel } from 'mongoose'
 import { HistoricInterface } from '../interfaces/HistoricInterface'
+import mongoosePaginate from 'mongoose-paginate'
 
 const HistoricSchema = new Schema({
   expense: {
@@ -21,5 +22,7 @@ const HistoricSchema = new Schema({
 }, {
   timestamps: true
 })
+
+HistoricSchema.plugin(mongoosePaginate)
 
 export default model<HistoricInterface>('Historic', HistoricSchema)

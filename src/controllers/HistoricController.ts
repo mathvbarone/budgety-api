@@ -5,7 +5,8 @@ import Historic from '../schemas/Historic'
 class HistoricController {
   public async index (req: Request, res: Response): Promise<Response> {
     try {
-      const historics = await Historic.find()
+      const { page = 1 } = req.query
+      const historics = await Historic.paginate({}, { page, limit: 10 })
 
       return res.json(historics)
     } catch (err) {

@@ -5,4 +5,5 @@ export interface HistoricInterface extends Document {
     budget: string,
     date: number,
     value: number,
+    plugin(): void;
 }
