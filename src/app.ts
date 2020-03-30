@@ -21,14 +21,14 @@ class App {
     }
 
     private database (): void {
-      mongoose.connect('mongodb://localhost:27017/api', {
+      mongoose.connect('mongodb://localhost:27017/nodeapi', {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
     }
 
     private routes (): void {
-      this.express.use(routes)
+      this.express.use('/api', routes)
     }
 }
 

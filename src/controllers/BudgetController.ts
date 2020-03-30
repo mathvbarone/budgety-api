@@ -8,6 +8,12 @@ class BudgetController {
 
     return res.json(budgets)
   }
+
+  public async create (req: Request, res: Response): Promise<Response> {
+    const budget = await Budget.create(req.body)
+
+    return res.json(budget)
+  }
 }
 
 export default new BudgetController()
