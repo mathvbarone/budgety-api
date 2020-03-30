@@ -22,4 +22,4 @@ const HistoricSchema = new Schema({
   timestamps: true
 })
 
-export default model<HistoricInterface>('Budget', HistoricSchema)
+export default model<HistoricInterface>('Historic', HistoricSchema)
