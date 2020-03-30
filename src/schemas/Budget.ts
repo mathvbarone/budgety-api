@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { BudgetInterface } from '../interfaces/BudgetInterface'
 
 const BudgetSchema = new Schema({
   name: {
@@ -17,4 +18,4 @@ const BudgetSchema = new Schema({
   timestamps: true
 })
 
-export default model('Budget', BudgetSchema)
+export default model<BudgetInterface>('Budget', BudgetSchema)

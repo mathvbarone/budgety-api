@@ -10,9 +10,12 @@ class BudgetController {
   }
 
   public async create (req: Request, res: Response): Promise<Response> {
-    const budget = await Budget.create(req.body)
-
-    return res.json(budget)
+    try {
+      const budget = await Budget.create(req.body)
+      return res.json(budget)
+    } catch (err) {
+      return res.status(400).send(err.message)
+    }
   }
 }
 
