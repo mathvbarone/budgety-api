@@ -1,4 +1,4 @@
-import { Schema, model, PaginateModel } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import { HistoricInterface } from '../interfaces/HistoricInterface'
 import mongoosePaginate from 'mongoose-paginate'
 
